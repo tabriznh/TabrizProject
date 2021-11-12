@@ -1,0 +1,116 @@
+footer {
+    background-color: $footerBg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #footer-main {
+        padding: 3rem 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .socials {
+            ul {
+                margin-bottom: 30px;
+
+                *+* {
+                    margin-left: 25px;
+                }
+
+                li {
+
+                    display: inline-block;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        a {
+                            color: #bfb3b3;
+                        }
+                    }
+
+                    a {
+                        color: $bodyBgDark;
+                        transition: .3s all ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .appStoreBtns {
+            *+* {
+                margin-left: 20px;
+            }
+
+            a {
+                color: $bodyBgDark;
+                border-color: $bodyBgDark;
+                transition: .4s all ease-in-out;
+            }
+        }
+    }
+
+    .input-email {
+        position: relative;
+
+        input {
+            height: 45px;
+            padding: 10px 50px 10px 15px;
+            border-style: none;
+            border-radius: 5px;
+            width: 500px;
+            background-color: transparent;
+            border: 1px solid $bodyBgDark;
+            color: $bodyBgLight;
+
+            &:focus {
+                outline: none;
+
+            }
+
+            &::placeholder {
+                font-size: 0.875rem;
+            }
+
+            
+        }
+        button {
+            border-style: none;
+            width: 70px;
+            height: 35px;
+            color: #fff;
+            background-color: #fe5a39;
+            border-radius: 5px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+            &:hover {
+                background-color: #ce4327;
+                transition-duration: 0.5s;
+            }
+        }
+    }
+    hr {
+        color: #696565;
+        width: 85%;
+    }
+
+    #footer-copyright {
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+
+        .footer-year {
+            p {
+                color: #bfb3b3;
+            }
+        }
+
+        .footer-name {
+            p {
+                color: #bfb3b3;
+            }
+        }
+    }
+}

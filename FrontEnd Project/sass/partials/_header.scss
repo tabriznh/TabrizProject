@@ -1,0 +1,156 @@
+header {
+    background-color: $headerFooterBg;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+    nav {
+        .container {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+        }
+
+        .navbar-brand {
+            font-family: $logo-font;
+            color: $logo-color !important;
+            font-size: 2rem;
+        }
+
+        .navbar-collapse {
+            flex-basis: 0;
+        }
+
+        form {
+            position: relative;
+
+            @media (max-width: 768px) {
+                margin-left: 0 !important;
+            }
+
+            input {
+                width: 400px !important;
+                padding-right: 45px !important;
+
+                &::placeholder {
+                    font-family: $secondary-font;
+                }
+
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+            }
+
+            .navbar-nav {
+                display: inline-block;
+            }
+
+            button {
+                position: absolute;
+                right: 5px;
+                top: 1px;
+
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                i {}
+            }
+
+            
+
+        }
+
+        ul {
+            li {
+                position: relative;
+
+                a {
+                    font-size: 2rem;
+                    color: #E4CECE !important;
+                    cursor: pointer;
+                }
+
+                span {
+                    height: $font-15;
+                    width: $font-15;
+                    background-color: red;
+                    text-align: center;
+                    line-height: $font-15;
+                    color: #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 0;
+                    top: 8px;
+                    font-size: $font-12;
+
+                    @media (max-width: 992px) {
+                        right: -8px;
+                    }
+                }
+
+                .wishList {
+                    height: 400px;
+                    width: 300px;
+                    position: absolute;
+                    background-color: $offCanvasBg;
+                    right: 0;
+                    top: 60px;
+                    border-radius: 3px;
+                    padding: 20px 15px;
+                    overflow: scroll;
+                    // display: none;
+
+                    .wishlistTitle {
+                        text-align: center;
+                        font-weight: 800;
+                        font-family: $logo-font;
+                        font-size: 2rem;
+                    }
+
+                    .row {
+                        border-bottom: 1px solid $bodyBgDark;
+                        padding: 20px 0;
+                        border-color: $bodyBgDark;
+                        cursor: pointer;
+
+                        .wishlistMovieImg {
+                            img {
+                                border-radius: 2px;
+                            }
+                        }
+
+                        .wishlistMovieInfo {
+                            display: flex;
+
+                            p {
+                                margin: 0;
+                                font-weight: 700;
+                                font-size: $font-17;
+                            }
+
+                            i {
+                                margin-left: auto;
+                                font-size: 2rem;
+
+                                &:hover {
+                                    i {
+                                        color: black;
+                                    }
+                                }
+
+                                i {
+                                    color: $bodyBgDark;
+                                    transition: .3s all ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,640 @@
+main {
+    #offCanvas {
+        .open-btn {
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: none;
+            position: fixed;
+            z-index: 99;
+            left: 15px;
+            top: 5px;
+
+            @media (max-width: 804px) {
+                left: 196px;
+            }
+
+            @media (max-width: 768px) {
+                left: 45px;
+                top: 32px;
+            }
+
+            @media (max-width: 698px) {
+                left: 15px;
+            }
+
+            @media (max-width: 633px) {
+                left: 215px;
+                top: 1px;
+            }
+
+            @media (max-width: 590px) {
+                left: 190px
+            }
+
+            &:focus {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+
+            &:hover span::before {
+                width: 100%;
+            }
+
+            &:hover span::after {
+                width: 100%;
+            }
+
+            span {
+                height: 5px;
+                width: 40px;
+                border: none;
+                background-color: $logo-color;
+                position: relative;
+                border-radius: 2px;
+                display: block;
+
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &::before {
+                    content: "";
+                    height: 5px;
+                    width: 75%;
+                    background-color: inherit;
+                    position: absolute;
+                    left: 0;
+                    top: 7px;
+                    transition: 0.3s all ease-in-out;
+                    border-radius: 2px;
+                }
+
+                &::after {
+                    content: "";
+                    height: 5px;
+                    width: 50%;
+                    background-color: inherit;
+                    position: absolute;
+                    left: 0;
+                    top: 14px;
+                    transition: 0.5s all ease-in-out;
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        .offcanvas {
+            background-color: $offCanvasBg;
+
+            .offcanvas-body {
+                ul {
+                    li {
+                        margin-bottom: 1.5rem;
+                        font-size: 1.2rem;
+
+                        a {
+                            transition: 0.3s all ease-in-out;
+                            position: relative;
+
+                            &:hover {
+                                color: $fontDark;
+                                // color: black;
+                            }
+
+                            i {
+                                margin-right: 20px;
+                                width: 20px;
+                            }
+
+                            .fa-caret-right {
+                                margin-left: 10px;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                height: 4px;
+                                width: 0;
+                                transition: 0.5s all ease-in-out;
+                                background-color: #C58D8D;
+                                top: 27px;
+                                left: 47px;
+                            }
+
+                            &:hover::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .offcanvasGame {
+                    border: 1px solid black;
+                    border-radius: 10px;
+                    background-color: #726539;
+                    border: none;
+                    margin-top: 100px;
+
+                    .offcanvasGameHeader {
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 1px solid black;
+                        padding: 5px 15px 5px;
+                        color: black;
+
+                        .hearts {
+                            display: flex;
+                            align-items: center;
+
+                            *+* {
+                                margin-left: 5px;
+                            }
+
+                            i {
+                                font-size: 1.5rem;
+                            }
+                        }
+
+
+
+                        p {
+                            margin: 0;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .offcanvasGameBody {
+                        height: 120px;
+                        display: flex;
+                        align-items: center;
+                        padding: 15px;
+
+                        a {
+                            font-size: 1.8rem;
+                            width: 220px;
+                            text-align: right;
+                            margin-left: auto;
+                            margin-bottom: 0;
+                            transition: 0.3s all ease-in-out;
+
+                            &:hover {
+                                color: $fontDark;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    #banner {
+        padding: 140px 0 70px 0;
+        background-color: #FDEEEE;
+
+        @media (max-width: 998px) {
+            padding: 200px 0 100px 0;
+        }
+
+        @media (max-width: 640px) {
+            padding: 200px 0 100px 0;
+        }
+
+        @media (max-width: 578px) {
+            // padding-right: 20px;
+        }
+
+        .carousel {
+            width: 800px;
+
+            .carousel-inner {
+                border-radius: 30px;
+            }
+        }
+    }
+
+    #trendingMovies {
+        padding: 3rem 0;
+        background-color: $bodyBgDark;
+
+        @media (max-width: 578px) {
+            padding-right: 20px;
+        }
+
+        
+
+        .container {
+            .section-heading {
+                margin-bottom: 5rem;
+                font-weight: 700;
+                color: $bodyBgLight;
+            }
+
+            .movie {
+                border: none;
+                width: 18.75rem;
+
+                @media (max-width: 992px) {
+                    width: 14rem;
+                }
+
+
+                &:hover {
+                    .card-image .play-btn {
+                        opacity: 1;
+                    }
+
+                    .card-image .addToFavourites {
+                        transform: translateY(0);
+                    }
+                }
+
+                .card-image {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    
+
+                    .play-btn {
+                        font-size: 6.5rem;
+                        color: #dfd7d7b5;
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        transition: .5s all ease-in-out;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    .addToFavourites {
+                        position: absolute;
+                        bottom: 30px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        line-height: 3rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50%;
+                        background-color: #ffffffbd;
+                        transition: 0.4s all ease-in-out;
+                        color: chocolate;
+                        transform: translateY(118px);
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: chocolate;
+                        }
+                    }
+
+                    .movie-image {
+                        width: 100%;
+                    }
+
+                    img {}
+                }
+
+
+
+
+                .card-body {
+                    background-color: $bodyBgDark;
+                    color: $bodyBgLight;
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 300;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    #comingSoonMovies {
+        padding: 8rem 0 5rem;
+        background-color: $bodyBgLight;
+
+        @media (max-width: 578px) {
+            padding-right: 20px;
+        }
+
+        .container {
+            .section-heading {
+                margin-bottom: 5rem;
+                font-weight: 700;
+                color: $bodyBgDark;
+            }
+
+            .movie {
+                border: none;
+                width: 18.75rem;
+
+                @media (max-width: 992px) {
+                    width: 14rem;
+                }
+
+                &:hover {
+                    .card-image .play-btn {
+                        opacity: 1;
+                    }
+
+                    .card-image .addToFavourites {
+                        transform: translateY(0);
+                    }
+                }
+
+                .card-image {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .play-btn {
+                        font-size: 6.5rem;
+                        color: #dfd7d7b5;
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        transition: .5s all ease-in-out;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    .addToFavourites {
+                        position: absolute;
+                        bottom: 30px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        line-height: 3rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50%;
+                        background-color: #ffffffbd;
+                        transition: 0.4s all ease-in-out;
+                        color: chocolate;
+                        transform: translateY(118px);
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: chocolate;
+                        }
+                    }
+
+                    .movie-image {
+                        width: 100%;
+                    }
+
+                    img {}
+                }
+
+
+
+
+                .card-body {
+                    background-color: $bodyBgLight;
+                    color: $bodyBgDark;
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 300;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    #tvShows {
+        padding: 8rem 0 5rem;
+        background-color: $bodyBgDark;
+
+        @media (max-width: 578px) {
+            padding-right: 20px;
+        }
+
+        .container {
+            .section-heading {
+                margin-bottom: 5rem;
+                font-weight: 700;
+                color: $bodyBgLight;
+            }
+
+            .movie {
+                border: none;
+                width: 18.75rem;
+
+                @media (max-width: 992px) {
+                    width: 14rem;
+                }
+
+                &:hover {
+                    .card-image .play-btn {
+                        opacity: 1;
+                    }
+
+                    .card-image .addToFavourites {
+                        transform: translateY(0);
+                    }
+                }
+
+                .card-image {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .play-btn {
+                        font-size: 6.5rem;
+                        color: #dfd7d7b5;
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        transition: .5s all ease-in-out;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    .addToFavourites {
+                        position: absolute;
+                        bottom: 30px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        line-height: 3rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50%;
+                        background-color: #ffffffbd;
+                        transition: 0.4s all ease-in-out;
+                        color: chocolate;
+                        transform: translateY(118px);
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: chocolate;
+                        }
+                    }
+
+                    .movie-image {
+                        width: 100%;
+                    }
+
+                    img {}
+                }
+
+
+
+
+                .card-body {
+                    background-color: $bodyBgDark;
+                    color: $bodyBgLight;
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 300;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    #pickRandom {
+        padding: 8rem 0 5rem;
+        background-color: $bodyBgLight;
+
+        @media (max-width: 578px) {
+            padding-right: 20px;
+        }
+
+        .container {
+            .section-heading {
+                margin-bottom: 5rem;
+                font-weight: 700;
+                color: $bodyBgDark;
+            }
+
+            .movie {
+                border: none;
+                width: 18.75rem;
+
+                @media (max-width: 992px) {
+                    width: 14rem;
+                }
+
+                &:hover {
+                    .card-image .play-btn {
+                        opacity: 1;
+                    }
+
+                    .card-image .addToFavourites {
+                        transform: translateY(0);
+                    }
+                }
+
+                .card-image {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .play-btn {
+                        font-size: 6.5rem;
+                        color: #dfd7d7b5;
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        transition: .5s all ease-in-out;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+
+                    .addToFavourites {
+                        position: absolute;
+                        bottom: 30px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        line-height: 3rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50%;
+                        background-color: #ffffffbd;
+                        transition: 0.4s all ease-in-out;
+                        color: chocolate;
+                        transform: translateY(118px);
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: chocolate;
+                        }
+                    }
+
+                    .movie-image {
+                        width: 100%;
+                    }
+
+                    img {}
+                }
+
+
+
+
+                .card-body {
+                    background-color: $bodyBgLight;
+                    color: $bodyBgDark;
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 300;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+}
