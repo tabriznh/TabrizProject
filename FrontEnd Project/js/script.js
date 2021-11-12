@@ -22,8 +22,14 @@ window.onload = () => {
     const wishListToggle = document.querySelector(".wishList");
     const wishListHeart = document.querySelector("#headerWishlist");
 
-    fetchMovies(POPULAR_URL, trendingMoviesDiv);
-    fetchMovies(COMING_SOON_URL, comingSoonMoviesDiv);
+
+    if (window.location.href.search("index") > 0) {
+        fetchMovies(POPULAR_URL, trendingMoviesDiv);
+    } else if (window.location.href.search("newRelease") > 0) {
+        fetchMovies(COMING_SOON_URL, comingSoonMoviesDiv);
+    }
+    
+    
 
 
     form.addEventListener("submit", function (e) {
